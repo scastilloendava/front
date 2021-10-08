@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="POST" id="card-form">
+          <div class="block-group">
+                  <input type="text" placeholder="John Smith" class="b75 block" id="cardholdername">
+            <input type="text" placeholder="10018" class="b25 block" id="cardholderzip">
+              </div>
+      
+          <div class="block-group">
+            <div class="block" data-processout-input="cc-number" 
+            data-processout-placeholder="4242 4242 4242 4242"></div>
+            <div class="block" data-processout-input="cc-exp" 
+              data-processout-placeholder="MM / YY"></div>
+            <div class="block" data-processout-input="cc-cvc" 
+              data-processout-placeholder="CVC"></div>
+          </div>
+      
+          <div>
+            <input type="submit" id="paymentBtn">
+          </div>
+          <div id="errors"></div>
+          <div id="success"></div>
+        </form>
+      </div>
+      
+      <div class="container">
+
+          <form action="/your-capture-endpoint" method="POST" id="payment-form">
+            <div data-processout-input="cc-number"
+            data-processout-placeholder="4242 4242 4242 4242"></div>
+            <div data-processout-input="cc-exp-month"
+            data-processout-placeholder="Expiration month"></div>
+            <div data-processout-input="cc-exp-year"
+            data-processout-placeholder="Expiration year"></div>
+            
+            <!-- It is also possible to use a unified field for the expiration date: -->
+            <div data-processout-input="cc-exp"
+            data-processout-placeholder="Expiration date (mm / yy)"></div>
+            
+            
+            <div data-processout-input="cc-cvc"
+            data-processout-placeholder="CVC"></div>
+            
+            <input type="submit" class="submit" value="Submit Payment">
+        </form>
+    </div>
+    <script src="https://js.processout.com/processout.js"></script>
+        <script type="text/javascript" src="index.js"></script> 
+    </body>
+    </html>
+    
